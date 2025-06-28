@@ -1,19 +1,15 @@
-import * as React from 'react';
-import { Button } from '@/components/ui/button';
-import { Loader2 } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { Button } from "@/components/ui/button";
+import React from "react";
 
-interface SubmitButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  isLoading?: boolean;
-}
-
-const SubmitButton: React.FC<SubmitButtonProps> = ({ isLoading, className, children, ...props }) => {
-  return (
-    <Button type="submit" className={cn("w-full", className)} disabled={isLoading || props.disabled} {...props}>
-      {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-      {children || 'Log in'}
-    </Button>
-  );
+type SubmitButtonProps = {
+  children: React.ReactNode;
+  className?: string;
 };
 
-export default SubmitButton;
+export function SubmitButton({ children, className }: SubmitButtonProps) {
+  return (
+    <Button type="submit" className={className}>
+      {children}
+    </Button>
+  );
+}
