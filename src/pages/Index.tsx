@@ -1,15 +1,14 @@
-import * as React from 'react';
-import MainAppLayout from '@/components/layout/MainAppLayout';
-import LoginCard from '@/components/Login/LoginCard';
+import MainAppLayout from "@/components/layout/MainAppLayout";
+import { LoginCard } from "@/components/Login/LoginCard";
 
-/**
- * The main entry page for the application, which displays the login interface.
- * It utilizes a central layout to position the login card in the middle of the screen.
- */
-const IndexPage: React.FC = () => {
+const IndexPage = () => {
   return (
     <MainAppLayout>
-      <LoginCard />
+      <div className="flex flex-col items-center justify-center min-h-screen py-12">
+        <h1 className="text-4xl font-bold mb-8">Welcome</h1>
+        <p className="text-muted-foreground mb-12">The application background is now black.</p>
+        <LoginCard />
+      </div>
     </MainAppLayout>
   );
 };
