@@ -1,20 +1,11 @@
-import * as React from 'react';
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import React from 'react';
 
-interface FooterLinksProps {
-    className?: string;
-}
-
-const FooterLinks: React.FC<FooterLinksProps> = ({ className }) => {
+export function FooterLinks() {
   return (
-    <div className={cn("text-center text-sm text-muted-foreground", className)}>
-      or,{' '}
-      <Button variant="link" className="p-0 h-auto font-normal text-muted-foreground hover:text-primary">
-        sign up
-      </Button>
+    <div className="text-center text-sm text-muted-foreground">
+      <a href="#" className="underline">
+        Forgot your password?
+      </a>
     </div>
   );
-};
-
-export default FooterLinks;
+}
