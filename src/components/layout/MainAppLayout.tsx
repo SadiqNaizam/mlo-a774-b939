@@ -1,23 +1,12 @@
-import * as React from 'react';
-import { cn } from '@/lib/utils';
+import React from 'react';
 
-interface MainAppLayoutProps {
+type MainAppLayoutProps = {
   children: React.ReactNode;
-  className?: string;
-}
+};
 
-/**
- * A simple layout component that centers its children vertically and horizontally
- * within the full screen viewport. It provides the main background color for the application.
- */
-const MainAppLayout: React.FC<MainAppLayoutProps> = ({ children, className }) => {
+const MainAppLayout: React.FC<MainAppLayoutProps> = ({ children }) => {
   return (
-    <main
-      className={cn(
-        'flex min-h-screen w-full items-center justify-center bg-background p-4',
-        className
-      )}
-    >
+    <main className="container mx-auto p-4">
       {children}
     </main>
   );
